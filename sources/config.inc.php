@@ -10,6 +10,9 @@
  * @package PhpMyAdmin
  */
 
+
+$cfg[‘ExecTimeLimit’] = 0;
+
 /*
  * This is needed for cookie based authentication to encrypt password in
  * cookie

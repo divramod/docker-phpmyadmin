@@ -1,17 +1,17 @@
 FROM corbinu/docker-nginx-php
-MAINTAINER Corbin Uselton corbin@openswimsoftware.com
+MAINTAINER Arvid Petermann arvidpetermann@gmail.com
 
 ENV PMA_SECRET          blowfish_secret
 ENV PMA_USERNAME        pma
 ENV PMA_PASSWORD        password
-ENV MYSQL_USERNAME      mysql
-ENV MYSQL_PASSWORD      password
+ENV MYSQL_USERNAME      dev
+ENV MYSQL_PASSWORD      dev
 
 RUN apt-get update
 RUN apt-get install -y mysql-client
 
 ENV PHPMYADMIN_VERSION 4.4.9
-ENV MAX_UPLOAD "50M"
+ENV MAX_UPLOAD "150M"
 
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/${PHPMYADMIN_VERSION}/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.bz2 \
  && tar -xvjf /phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.bz2 -C / \
